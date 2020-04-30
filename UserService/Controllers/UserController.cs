@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
 using BOL;
-using DAL;
+using DAL.Repository;
+using DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,39 +15,43 @@ namespace UserService.Controllers
     public class UserController : ControllerBase
     {
 
-        private DatabaseContext _databaseContext;
-        public UserController()
+        private readonly IRepository<User> _userRepository;
+        private readonly IMapper _mapper;
+
+        public UserController(IMapper mapper, IRepository<User> userRepository)
         {
-            _databaseContext = new DatabaseContext();
+            _mapper = mapper;
+            _userRepository = userRepository;
         }
 
         // GET: api/User
         [HttpGet]
-        public IEnumerable<User> Get()
+        public async Task<IEnumerable<UserDto>> GetAsync()
         {
-            return _databaseContext.Users.ToList();
+            IEnumerable<User> users = await _userRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<User>, IEnumerable<UserDto>>(users);
         }
 
         // GET: api/User/5
         [HttpGet("{id}", Name = "Get")]
-        public User Get(int id)
+        public async Task<UserDto> GetByIdAsync(int id)
         {
-            return _databaseContext.Users.Find(id);
+            User user = await _userRepository.GetByIdAsync(id);
+            return _mapper.Map<User, UserDto>(user);
         }
 
         // POST: api/User
         [HttpPost]
-        public IActionResult Post([FromBody] User model)
+        public async Task<IActionResult> PostAsync([FromBody] UserDto userDto)
         {
             try
             {
-                _databaseContext.Users.Add(model);
-                _databaseContext.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, model);
+                User user = _mapper.Map<UserDto, User>(userDto);
+                await _userRepository.InsertAsync(user);
+                return StatusCode(StatusCodes.Status201Created, userDto);
             }
             catch (Exception ex)
             {
-
                 return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
