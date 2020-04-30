@@ -3,10 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using UserService.Database;
 
-namespace UserService.Migrations
+namespace DAL
 {
     [DbContext(typeof(DatabaseContext))]
     [Migration("20200427174153_InitialCreate")]

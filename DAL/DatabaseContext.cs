@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UserService.Database.Entities;
+﻿using BOL;
+using Microsoft.EntityFrameworkCore;
 
-namespace UserService.Database
+namespace DAL
 {
     public class DatabaseContext: DbContext
     {

@@ -1,3 +1,5 @@
 dotnet ef migrations --project ./UserService --startup-project ./UserService add InitialCreate
 
 dotnet ef database update --project ./UserService --startup-project ./UserService
+
+dotnet ef database update --project ./DAL --startup-project ./DAL

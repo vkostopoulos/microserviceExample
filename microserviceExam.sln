@@ -10,7 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readFirst.txt = readFirst.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{07785986-B2D3-4E51-A127-4DAC2D3CF016}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\APIGateway.csproj", "{07785986-B2D3-4E51-A127-4DAC2D3CF016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{D0F0E88C-154D-46D0-9A98-347A2A890545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOL", "BOL\BOL.csproj", "{758D6B2B-FE23-45D4-A791-075E207AF10D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +30,14 @@ Global
 		{07785986-B2D3-4E51-A127-4DAC2D3CF016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07785986-B2D3-4E51-A127-4DAC2D3CF016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07785986-B2D3-4E51-A127-4DAC2D3CF016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F0E88C-154D-46D0-9A98-347A2A890545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F0E88C-154D-46D0-9A98-347A2A890545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F0E88C-154D-46D0-9A98-347A2A890545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F0E88C-154D-46D0-9A98-347A2A890545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758D6B2B-FE23-45D4-A791-075E207AF10D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758D6B2B-FE23-45D4-A791-075E207AF10D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758D6B2B-FE23-45D4-A791-075E207AF10D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758D6B2B-FE23-45D4-A791-075E207AF10D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
