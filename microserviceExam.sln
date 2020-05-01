@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOL", "BOL\BOL.csproj", "{7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{861FEF78-FF6B-48FF-B4EC-0782D6F9162A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserServiceReplica", "UserServiceReplica\UserServiceReplica.csproj", "{B4AE1805-3E3E-48E6-B1B8-EE600A4E2EB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{861FEF78-FF6B-48FF-B4EC-0782D6F9162A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{861FEF78-FF6B-48FF-B4EC-0782D6F9162A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{861FEF78-FF6B-48FF-B4EC-0782D6F9162A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4AE1805-3E3E-48E6-B1B8-EE600A4E2EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4AE1805-3E3E-48E6-B1B8-EE600A4E2EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4AE1805-3E3E-48E6-B1B8-EE600A4E2EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4AE1805-3E3E-48E6-B1B8-EE600A4E2EB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

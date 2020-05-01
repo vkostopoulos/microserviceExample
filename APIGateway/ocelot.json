@@ -6,10 +6,17 @@
       "DownStreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "59025"
+          "Port": "59000"
+        },
+        {
+          "Host": "localhost",
+          "Port": "59001"
         }
       ],
       "UpStreamPathTemplate": "/user",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
       "UpStreamHttpMethod": [ "GET", "POST" ]
     },
     {
@@ -18,10 +25,17 @@
       "DownStreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "59025"
+          "Port": "59000"
+        },
+        {
+          "Host": "localhost",
+          "Port": "59001"
         }
       ],
       "UpStreamPathTemplate": "/user/{id}",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
       "UpStreamHttpMethod": [ "GET" ]
     }
   ]
