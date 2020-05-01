@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using UserService.Helpers;
+using CustomerServiceReplica.Helpers;
 
-namespace UserService
+namespace CustomerServiceReplica
 {
     public class Startup
     {

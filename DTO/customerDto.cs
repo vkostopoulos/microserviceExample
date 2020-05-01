@@ -1,14 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BOL
+﻿namespace DTO
 {
-    public class User
+    public class customerDto
     {
-        [Required]
-        public int UserId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Contact { get; set; }
-
     }
 }

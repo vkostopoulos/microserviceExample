@@ -2,14 +2,14 @@
 using BOL;
 using DTO;
 
-namespace UserService.Helpers
+namespace CustomerServiceReplica.Helpers
 {
     public class MappingProfile : Profile
     {
         public MappingProfile()
         {
-            CreateMap<UserDto, User>();
-            CreateMap<User, UserDto>();
+            CreateMap<customerDto, Customer>();
+            CreateMap<Customer, customerDto>();
         }
     }
 

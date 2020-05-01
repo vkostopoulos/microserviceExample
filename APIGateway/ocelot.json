@@ -1,7 +1,7 @@
 {
   "ReRoutes": [
     {
-      "DownStreamPathTemplate": "/api/user",
+      "DownStreamPathTemplate": "/api/customer",
       "DownStreamSchema": "http",
       "DownStreamHostAndPorts": [
         {
@@ -13,14 +13,14 @@
           "Port": "59001"
         }
       ],
-      "UpStreamPathTemplate": "/user",
+      "UpStreamPathTemplate": "/customers",
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },
       "UpStreamHttpMethod": [ "GET", "POST" ]
     },
     {
-      "DownStreamPathTemplate": "/api/user/{id}",
+      "DownStreamPathTemplate": "/api/customer/{id}",
       "DownStreamSchema": "http",
       "DownStreamHostAndPorts": [
         {
@@ -32,7 +32,7 @@
           "Port": "59001"
         }
       ],
-      "UpStreamPathTemplate": "/user/{id}",
+      "UpStreamPathTemplate": "/customer/{id}",
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
       },

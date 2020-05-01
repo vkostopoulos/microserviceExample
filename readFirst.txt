@@ -1,9 +1,7 @@
-// Create migration from cmd !! DONT RUN
+// Create migration from cmd !! DON'T RUN
 
-dotnet ef migrations --project ./UserService --startup-project ./UserService add InitialCreate
+dotnet ef migrations --project ./DAL --startup-project ./DAL add InitialCreate
 
-dotnet ef database update --project ./UserService --startup-project ./UserService
+// RUN IT from cmd
 
-
-// RUN IT from cmd in project folder
 dotnet ef database update --project ./DAL --startup-project ./DAL
