@@ -37,6 +37,30 @@
         "Type": "RoundRobin"
       },
       "UpStreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownStreamPathTemplate": "/api/authentication/login",
+      "DownStreamSchema": "http",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "59002"
+        }
+      ],
+      "UpStreamPathTemplate": "/authentication/login",
+      "UpStreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownStreamPathTemplate": "/api/authentication/verify",
+      "DownStreamSchema": "http",
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "59002"
+        }
+      ],
+      "UpStreamPathTemplate": "/authentication/verify",
+      "UpStreamHttpMethod": [ "GET" ]
     }
   ]
 }
