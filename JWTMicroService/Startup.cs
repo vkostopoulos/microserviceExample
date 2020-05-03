@@ -1,5 +1,6 @@
 using DAL.Repository;
 using JWTMicroNetCore.Services;
+using JWTMicroService.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,6 +52,7 @@ namespace JWTMicroService
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
             services.AddScoped<ITokenBuilder, TokenBuilder>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             services.AddControllers();
         }

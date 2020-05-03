@@ -1,12 +1,8 @@
 ﻿using BOL;
-using DAL;
-using DAL.Repository;
-using Helpers;
-using JWTMicroNetCore.Services;
+using JWTMicroService.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,36 +12,21 @@ namespace JWTMicroNetCore.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IRepository<User> _userRepository;
-        private readonly ITokenBuilder _tokenBuilder;
+        private readonly IAuthenticationService _authenticationService;
 
-        public AuthenticationController(IRepository<User> userRepository, ITokenBuilder tokenBuilder)
+        public AuthenticationController(IAuthenticationService authenticationService)
         {
-            _userRepository = userRepository;
-            _tokenBuilder   = tokenBuilder;
+            _authenticationService = authenticationService;
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]User user)
         {
-            var dbUser = (await _userRepository.GetAllAsync())
-                .SingleOrDefault(u => u.Username == user.Username);
-
-            if (dbUser == null)
-            {
-                return NotFound("User not found.");
-            }
-
-            CryptoHelper cryptoHelper = new CryptoHelper();
-            var isValid = cryptoHelper.Decrypt(dbUser.Password) == user.Password;
-
-            if (!isValid)
+            string token = await _authenticationService.Login(user);
+            if (string.IsNullOrEmpty(token))
             {
                 return BadRequest("Could not authenticate user.");
             }
-
-            var token = _tokenBuilder.BuildToken(user.Username);
-
             return Ok(token);
         }
 
@@ -53,19 +34,8 @@ namespace JWTMicroNetCore.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> VerifyToken()
         {
-            var username = User
-                .Claims
-                .SingleOrDefault();
-
-            if (username == null)
-            {
-                return Unauthorized();
-            }
-
-            var userExists = (await _userRepository.GetAllAsync())
-                .Any(u => u.Username == username.Value);
-
-            if (!userExists)
+            bool itsOK = await _authenticationService.VerifyToken(User.Claims.SingleOrDefault());
+            if (!itsOK)
             {
                 return Unauthorized();
             }
