@@ -20,9 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerService", "Customer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerServiceReplica", "CustomerServiceReplica\CustomerServiceReplica.csproj", "{B9464D91-A39C-4FC8-95AB-17DED198E231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTMicroService", "JWTMicroService\JWTMicroService.csproj", "{FD91261D-A057-4073-9A02-12EDD168B694}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTMicroService", "JWTMicroService\JWTMicroService.csproj", "{FD91261D-A057-4073-9A02-12EDD168B694}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{6313B586-1BD7-4473-9660-25F95529BD70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "Helpers\Helpers.csproj", "{6313B586-1BD7-4473-9660-25F95529BD70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerServiceTests", "CustomersServiceTests\CustomerServiceTests.csproj", "{C769C3D6-2C9D-477C-B157-2BF949D1E17E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{6313B586-1BD7-4473-9660-25F95529BD70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6313B586-1BD7-4473-9660-25F95529BD70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6313B586-1BD7-4473-9660-25F95529BD70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C769C3D6-2C9D-477C-B157-2BF949D1E17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C769C3D6-2C9D-477C-B157-2BF949D1E17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C769C3D6-2C9D-477C-B157-2BF949D1E17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C769C3D6-2C9D-477C-B157-2BF949D1E17E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
